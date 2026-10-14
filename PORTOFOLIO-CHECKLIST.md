@@ -1,50 +1,46 @@
 
-# PORTOFOLIO CHECKLIST KURSUSKU
+# Checklist Portofolio KursusKu
 
-Nama: Abdul Rasyid  
-NIM: 2524226  
-Program Studi: PTIK  
-Mata Kuliah: Bahasa Pemrograman III
+## 1. Identitas Proyek
 
-## 1. File Utama
+- [x] Nama proyek: KursusKu
+- [x] Nama mahasiswa: Abdul Rasyid
+- [x] NIM: 2524226
+- [x] Mata kuliah: Bahasa Pemrograman III
 
-- [x] index.php
-- [x] server-time.php
-- [x] fee-calculator.php
-- [x] helpers.php
-- [x] test-functions.php
-- [x] README.md
+## 2. File PHP
 
-## 2. Latihan PHP Tambahan
+- [x] `index.php` — katalog kursus
+- [x] `hello.php` — informasi mahasiswa
+- [x] `server-time.php` — tanggal dan waktu server
+- [x] `fee-calculator.php` — kalkulator biaya dan diskon
+- [x] `helpers.php` — fungsi bantuan
+- [x] `test-functions.php` — pengujian fungsi
+- [x] `fee-tests.php` — pengujian biaya kursus
+- [x] `type-data-test.php` — pengujian tipe data
+- [x] `operator-test.php` — pengujian operator
+- [x] `logic-test.php` — pengujian logika
+- [x] `string-test.php` — pengujian string
+- [x] `date-test.php` — pengujian tanggal
+- [x] `procedure-test.php` — pengujian prosedur dan fungsi
 
-- [x] hello.php
-- [x] fee-tests.php
-- [x] type-data-test.php
-- [x] operator-test.php
-- [x] logic-test.php
-- [x] string-test.php
-- [x] date-test.php
-- [x] procedure-test.php
+## 3. Aset dan Dokumentasi
 
-## 3. Media dan Dokumentasi
+- [x] Gambar katalog tersedia di `assets/images/hero-kursus.jpg`
+- [x] Video pengenalan tersedia di `assets/video/intro-kursus.mp4`
+- [x] Dokumentasi proyek tersedia di `README.md`
+- [ ] Bukti praktik dikumpulkan di folder `evidence/`
 
-- [x] Gambar katalog kursus tersedia
-- [x] Video pengenalan tersedia
-- [ ] Screenshot halaman utama
-- [ ] Screenshot hasil pengujian fungsi
-- [ ] Screenshot kalkulator biaya
-- [ ] Pemeriksaan semua file PHP
+## 4. Pemeriksaan yang Masih Harus Dilakukan
 
-## 4. Pengujian
-
-- [ ] Menjalankan halaman utama
-- [ ] Menjalankan server-time.php
-- [ ] Menjalankan fee-calculator.php
-- [ ] Menjalankan fee-tests.php
-- [ ] Memeriksa hasil pengujian fungsi
+- [ ] Jalankan halaman katalog melalui Laragon.
+- [ ] Pastikan gambar dan video dapat ditampilkan.
+- [ ] Jalankan kalkulator biaya kursus.
+- [ ] Jalankan seluruh halaman pengujian PHP.
+- [ ] Periksa hasil pengujian dan perbaiki jika ada kegagalan.
+- [ ] Ambil tangkapan layar hasil praktik.
+- [ ] Periksa kembali seluruh file sebelum pengumpulan.
 
 ## 5. Catatan
 
-Checklist ini digunakan untuk memantau kelengkapan proyek.
-Centang bagian pengujian dan bukti praktik setelah benar-benar
-dilakukan. Sesuaikan daftar file dengan isi repository aktual.
+Checklist ini mencatat file dan aset yang telah disiapkan dalam proyek. Kotak pemeriksaan tidak berarti bahwa seluruh halaman telah berhasil dijalankan atau diuji. Tandai pemeriksaan praktik setelah benar-benar dilakukan.
