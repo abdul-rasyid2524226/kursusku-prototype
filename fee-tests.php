@@ -18,6 +18,16 @@ $tests = [
         hitungTotal(250000, 3),
         750000
     ],
+    [
+        'Diskon 10 persen',
+        hitungDiskon(150000, 10),
+        135000
+    ],
+    [
+        'Diskon 20 persen',
+        hitungDiskon(200000, 20),
+        160000
+    ],
 ];
 
 $passed = 0;
