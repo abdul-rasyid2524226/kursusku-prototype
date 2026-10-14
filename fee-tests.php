@@ -28,12 +28,32 @@ $tests = [
         hitungDiskon(200000, 20),
         160000
     ],
+    [
+        'Format Rupiah',
+        formatRupiah(150000),
+        'Rp150.000'
+    ],
+    [
+        'Status kursus tersedia',
+        statusKursus(true),
+        'Tersedia'
+    ],
+    [
+        'Status kursus penuh',
+        statusKursus(false),
+        'Penuh'
+    ],
+    [
+        'Total kursus gratis',
+        hitungTotal(0, 1),
+        0
+    ],
 ];
 
 $passed = 0;
 $total = count($tests);
 
-echo "<h1>Pengujian Kalkulator KursusKu</h1>";
+echo "<h1>Pengujian Fungsi KursusKu</h1>";
 echo "<table border='1' cellpadding='10'>";
 echo "<tr><th>Pengujian</th><th>Hasil</th><th>Status</th></tr>";
 
@@ -41,7 +61,7 @@ foreach ($tests as $test) {
     $name = $test[0];
     $actual = $test[1];
     $expected = $test[2];
-    $success = ($actual == $expected);
+    $success = ($actual === $expected);
 
     if ($success) {
         $passed++;
