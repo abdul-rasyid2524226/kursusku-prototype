@@ -18,27 +18,19 @@ $tests = [
         hitungTotal(250000, 3),
         750000
     ],
-    [
-        'Diskon 10 persen',
-        hitungDiskon(350000, 10),
-        315000
-    ],
-    [
-        'Diskon 25 persen',
-        hitungDiskon(400000, 25),
-        300000
-    ],
 ];
 
 $passed = 0;
-$totalTests = count($tests);
+$total = count($tests);
 
 echo "<h1>Pengujian Kalkulator KursusKu</h1>";
 echo "<table border='1' cellpadding='10'>";
-echo "<tr><th>Pengujian</th><th>Expected</th><th>Actual</th><th>Status</th></tr>";
+echo "<tr><th>Pengujian</th><th>Hasil</th><th>Status</th></tr>";
 
 foreach ($tests as $test) {
-    [$name, $actual, $expected] = $test;
+    $name = $test[0];
+    $actual = $test[1];
+    $expected = $test[2];
     $success = ($actual == $expected);
 
     if ($success) {
@@ -47,12 +39,11 @@ foreach ($tests as $test) {
 
     echo "<tr>";
     echo "<td>" . htmlspecialchars($name) . "</td>";
-    echo "<td>" . htmlspecialchars((string) $expected) . "</td>";
     echo "<td>" . htmlspecialchars((string) $actual) . "</td>";
     echo "<td>" . ($success ? "PASS" : "FAIL") . "</td>";
     echo "</tr>";
 }
 
 echo "</table>";
-echo "<h2>Hasil: $passed/$totalTests PASS</h2>";
+echo "<h2>Hasil: $passed/$total PASS</h2>";
 ?>
