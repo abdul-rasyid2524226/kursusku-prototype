@@ -1,21 +1,30 @@
-
 PROJECT FILE MANIFEST
+
 Proyek: KursusKu - Katalog Kursus Online
-Nama: Abdul Rasyid
-NIM: 2524226
+
+Nama: Abdul Rasyid  
+NIM: 2524226  
 Mata Kuliah: Bahasa Pemrograman III
 
 FILE UTAMA
 - index.php
 - hello.php
+- data.php
 - server-time.php
 - fee-calculator.php
 - helpers.php
-- README.md
 
-FILE PENGUJIAN
-- test-functions.php
-- fee-tests.php
+FITUR PENDAFTARAN DAN DEMONSTRASI
+- registration.php
+- process-registration.php
+- get-demo.php
+- register.php
+- process.php
+- history.php
+
+LATIHAN PHP
+- loop-lab.php
+- bitwise-test.php
 - type-data-test.php
 - operator-test.php
 - logic-test.php
@@ -23,25 +32,23 @@ FILE PENGUJIAN
 - date-test.php
 - procedure-test.php
 
-ASET MEDIA
-- assets/images/hero-kursus.jpg
-- assets/video/intro-kursus.mp4
+PENGUJIAN
+- test-functions.php
+- fee-tests.php
 
-DOKUMENTASI DAN BUKTI
+DOKUMENTASI
+- README.md
 - PORTOFOLIO-CHECKLIST.md
 - REFLEKSI-P5-P6.md
 - PROJECT-FILE-MANIFEST.txt
 - VALIDATION-RESULTS.txt
 - evidence/README.md
 
-LINGKUNGAN PENGEMBANGAN
-- PHP
-- HTML
-- CSS
-- Laragon
-- Git dan GitHub
+ASET MEDIA
+- assets/images/hero-kursus.jpg
+- assets/video/intro-kursus.mp4
 
 CATATAN
-Daftar ini merangkum berkas proyek yang telah disiapkan.
-Pengujian langsung tetap diperlukan untuk memastikan setiap
-halaman berjalan dengan benar.
+Daftar ini merupakan inventaris file yang direncanakan untuk proyek KursusKu. Pastikan setiap file benar-benar tersedia di repository dan setiap fitur diuji sebelum dinyatakan berhasil.
+
+Data pendaftaran pada versi latihan ini belum disimpan ke database.
