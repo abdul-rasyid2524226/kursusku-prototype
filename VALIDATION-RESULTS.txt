@@ -1,49 +1,49 @@
 
-VALIDATION RESULTS - KURSUSKU
-=============================
+HASIL PEMERIKSAAN PROYEK KURSUSKU
 
-Nama        : Abdul Rasyid
-NIM         : 2524226
-Mata Kuliah : Bahasa Pemrograman III
+Nama: Abdul Rasyid
+NIM: 2524226
+Mata Kuliah: Bahasa Pemrograman III
 
-TUJUAN
-------
-Dokumen ini digunakan untuk mencatat pemeriksaan file,
-fitur, dan pengujian proyek KursusKu.
+1. PEMERIKSAAN BERKAS
+Status: Berkas proyek telah disiapkan.
+Catatan: Keberadaan dan kelengkapan berkas perlu diperiksa
+kembali pada repositori.
 
-PEMERIKSAAN FILE
-----------------
-[ ] index.php
-[ ] server-time.php
-[ ] fee-calculator.php
-[ ] helpers.php
-[ ] test-functions.php
-[ ] fee-tests.php
-[ ] hello.php
-[ ] type-data-test.php
-[ ] operator-test.php
-[ ] logic-test.php
-[ ] string-test.php
-[ ] date-test.php
-[ ] procedure-test.php
+2. PEMERIKSAAN FUNGSI PHP
+Status: Belum diverifikasi melalui eksekusi langsung.
+Ruang lingkup:
+- formatRupiah()
+- hitungTotal()
+- hitungDiskon()
+- statusKursus()
 
-PEMERIKSAAN FITUR
------------------
-[ ] Halaman utama dapat dibuka.
-[ ] Waktu server ditampilkan.
-[ ] Kalkulator biaya dapat digunakan.
-[ ] Fungsi bantuan berjalan sesuai harapan.
-[ ] Pengujian fungsi selesai.
-[ ] Pengujian kalkulator selesai.
+3. PEMERIKSAAN HALAMAN WEB
+Status: Belum diverifikasi melalui Laragon.
+Halaman yang perlu diperiksa:
+- index.php
+- hello.php
+- server-time.php
+- fee-calculator.php
 
-HASIL PENGUJIAN
----------------
-Status: Belum diverifikasi melalui server PHP.
+4. PEMERIKSAAN HALAMAN PENGUJIAN
+Status: Belum diverifikasi melalui eksekusi langsung.
+Halaman yang perlu diperiksa:
+- test-functions.php
+- fee-tests.php
+- type-data-test.php
+- operator-test.php
+- logic-test.php
+- string-test.php
+- date-test.php
+- procedure-test.php
 
-Catatan:
-Isi checklist setelah setiap file diperiksa dan fitur
-benar-benar diuji. Jangan menandai pengujian berhasil
-sebelum melihat hasilnya.
+5. PEMERIKSAAN MEDIA
+Status: File gambar dan video telah disiapkan.
+Catatan: Gambar dan video perlu diuji melalui browser untuk
+memastikan keduanya dapat ditampilkan dan diputar.
 
-Tanggal pemeriksaan:
-Isi setelah pemeriksaan dilakukan.
+6. KESIMPULAN
+Proyek KursusKu telah disiapkan dengan berkas PHP,
+dokumentasi, dan aset media. Pemeriksaan runtime diperlukan
+sebelum proyek dinyatakan berhasil sepenuhnya.
