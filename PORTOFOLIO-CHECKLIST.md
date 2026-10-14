@@ -28,8 +28,8 @@ Mata Kuliah: Bahasa Pemrograman III
 
 ## 3. Media dan Dokumentasi
 
-- [ ] Gambar katalog kursus tersedia
-- [ ] Video pengenalan tersedia
+- [x] Gambar katalog kursus tersedia
+- [x] Video pengenalan tersedia
 - [ ] Screenshot halaman utama
 - [ ] Screenshot hasil pengujian fungsi
 - [ ] Screenshot kalkulator biaya
