@@ -1,24 +1,33 @@
 
 <?php
 $nama = "Abdul Rasyid";
-$mataKuliah = "Pemrograman Web III";
+$nim = "2524226";
+$mataKuliah = "Bahasa Pemrograman III";
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello KursusKu</title>
 </head>
 <body>
     <h1>Selamat Datang di KursusKu!</h1>
 
-    <p>Nama mahasiswa:
-        <?php echo htmlspecialchars($nama); ?>
+    <p>
+        Nama mahasiswa:
+        <?= htmlspecialchars($nama) ?>
     </p>
 
-    <p>Mata kuliah:
-        <?php echo htmlspecialchars($mataKuliah); ?>
+    <p>
+        NIM:
+        <?= htmlspecialchars($nim) ?>
+    </p>
+
+    <p>
+        Mata kuliah:
+        <?= htmlspecialchars($mataKuliah) ?>
     </p>
 </body>
 </html>
