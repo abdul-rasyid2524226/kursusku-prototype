@@ -1,60 +1,75 @@
-# Kursusku
 
-Kursusku adalah prototype website katalog kursus online yang dibuat menggunakan PHP dan HTML/CSS.
+# KursusKu — Prototype Website Kursus Online
+
+## Identitas Proyek
+
+- **Nama Mahasiswa:** Abdul Rasyid
+- **NIM:** 2524226
+- **Program Studi:** PTIK
+- **Mata Kuliah:** Bahasa Pemrograman III
+- **Teknologi:** PHP, HTML, CSS
 
 ## Deskripsi
 
-Website ini menampilkan daftar kursus yang dapat dipelajari pengguna. Setiap kursus memiliki informasi nama kursus, deskripsi, dan status ketersediaan.
-
-Project ini dibuat sebagai tugas praktikum Bahasa Pemrograman III.
+KursusKu merupakan prototype website katalog kursus online.
+Proyek ini dibuat untuk mempraktikkan dasar pemrograman PHP,
+penggunaan fungsi, pengolahan data, serta pembuatan halaman web.
 
 ## Fitur
 
-- Katalog 6 kursus
-- Status kursus Tersedia dan Penuh
-- Tampilan responsive untuk desktop dan mobile
-- Gambar hero
-- Video pengenalan
-- Server time
-- Kalkulator biaya kursus
-- Helper functions
-- Pengujian fungsi dengan 6 test case
+- Halaman utama katalog kursus.
+- Tampilan informasi waktu server.
+- Kalkulator biaya kursus.
+- Fungsi bantuan PHP.
+- Pengujian fungsi.
+- Latihan tipe data, operator, logika, string, tanggal, dan fungsi.
 
-## Daftar Kursus
-
-| No | Kursus | Status |
-|---|---|---|
-| 1 | PHP Dasar | Tersedia |
-| 2 | MySQL Dasar | Tersedia |
-| 3 | HTML & CSS | Penuh |
-| 4 | JavaScript | Tersedia |
-| 5 | Laravel | Penuh |
-| 6 | Git & GitHub | Tersedia |
-
-## Teknologi
-
-- PHP
-- HTML
-- CSS
-- Git
-- GitHub
-- Laragon
-
-## Struktur Project
+## Struktur Proyek
 
 ```text
 kursusku-prototype/
 ├── index.php
 ├── server-time.php
 ├── fee-calculator.php
+├── fee-tests.php
 ├── helpers.php
 ├── test-functions.php
+├── hello.php
+├── type-data-test.php
+├── operator-test.php
+├── logic-test.php
+├── string-test.php
+├── date-test.php
+├── procedure-test.php
 ├── README.md
-│
 ├── assets/
 │   ├── images/
-│   │   └── hero-kursus.jpg
 │   └── video/
-│       └── intro-kursus.mp4
-│
 └── evidence/
+```
+
+## Cara Menjalankan
+
+1. Pasang Laragon atau server lokal yang mendukung PHP.
+2. Letakkan folder proyek di direktori web server.
+3. Jalankan Apache.
+4. Buka browser dan akses:
+
+   `http://localhost/kursusku-prototype/`
+
+## Pengujian
+
+File `test-functions.php` digunakan untuk menguji fungsi bantuan.
+File `fee-tests.php` berisi contoh pengujian perhitungan biaya.
+
+Pengujian runtime perlu dilakukan melalui server PHP.
+Hasil pengujian harus disesuaikan dengan hasil praktik yang sebenarnya.
+
+## Dokumentasi
+
+Screenshot praktik dan hasil pengujian dapat disimpan di folder `evidence/`.
+
+## Status Proyek
+
+Prototype ini dikembangkan sebagai tugas pembelajaran
+Bahasa Pemrograman III.
