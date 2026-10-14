@@ -1,93 +1,78 @@
-<?php
 
+<?php
 require_once 'helpers.php';
 
-$tests = [];
+$tests = [
+    [
+        'nama' => 'Format Rupiah',
+        'aktual' => formatRupiah(150000),
+        'harapan' => 'Rp150.000'
+    ],
+    [
+        'nama' => 'Hitung total satu kursus',
+        'aktual' => hitungTotal(150000, 1),
+        'harapan' => 150000
+    ],
+    [
+        'nama' => 'Hitung total dua kursus',
+        'aktual' => hitungTotal(150000, 2),
+        'harapan' => 300000
+    ],
+    [
+        'nama' => 'Diskon 10 persen',
+        'aktual' => hitungDiskon(150000, 10),
+        'harapan' => 135000
+    ],
+    [
+        'nama' => 'Status kursus tersedia',
+        'aktual' => statusKursus(true),
+        'harapan' => 'Tersedia'
+    ],
+    [
+        'nama' => 'Status kursus penuh',
+        'aktual' => statusKursus(false),
+        'harapan' => 'Penuh'
+    ]
+];
 
-function test($nama, $hasil)
-{
-    return [
-        'nama' => $nama,
-        'hasil' => $hasil
-    ];
-}
-
-/* TEST 1 */
-
-$tests[] = test(
-    'formatRupiah()',
-    formatRupiah(150000) === 'Rp150.000'
-);
-
-/* TEST 2 */
-
-$tests[] = test(
-    'hitungTotal()',
-    hitungTotal(150000, 2) === 300000
-);
-
-/* TEST 3 */
-
-$tests[] = test(
-    'hitungDiskon()',
-    hitungDiskon(100000, 10) === 90000
-);
-
-/* TEST 4 */
-
-$tests[] = test(
-    'statusKursus() - Tersedia',
-    statusKursus(true) === 'Tersedia'
-);
-
-/* TEST 5 */
-
-$tests[] = test(
-    'statusKursus() - Penuh',
-    statusKursus(false) === 'Penuh'
-);
-
-/* TEST 6 */
-
-$tests[] = test(
-    'hitungTotal() dengan jumlah 3',
-    hitungTotal(50000, 3) === 150000
-);
-
-$jumlahPass = 0;
-
+$lulus = 0;
+$total = count($tests);
 ?>
 
 <!DOCTYPE html>
-
 <html lang="id">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <title>Test Functions - Kursusku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengujian Fungsi KursusKu</title>
 
     <style>
-
         body {
             font-family: Arial, sans-serif;
+            margin: 30px;
             background: #f5f5f5;
-            padding: 40px;
         }
 
         .container {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
+            padding: 25px;
             background: white;
-            padding: 30px;
             border-radius: 10px;
         }
 
-        .test {
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
             padding: 12px;
-            margin: 8px 0;
-            border-radius: 5px;
+            text-align: left;
+        }
+
+        th {
             background: #eee;
         }
 
@@ -100,48 +85,46 @@ $jumlahPass = 0;
             color: red;
             font-weight: bold;
         }
-
     </style>
-
 </head>
 
 <body>
+<main class="container">
+    <h1>Pengujian Fungsi KursusKu</h1>
 
-<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Pengujian</th>
+                <th>Hasil Aktual</th>
+                <th>Hasil Harapan</th>
+                <th>Status</th>
+            </tr>
+        </thead>
 
-    <h1>Test Functions</h1>
+        <tbody>
+        <?php foreach ($tests as $test): ?>
+            <?php
+            $berhasil = $test['aktual'] === $test['harapan'];
 
-    <?php foreach ($tests as $item): ?>
+            if ($berhasil) {
+                $lulus++;
+            }
+            ?>
 
-        <div class="test">
+            <tr>
+                <td><?= htmlspecialchars($test['nama']) ?></td>
+                <td><?= htmlspecialchars((string) $test['aktual']) ?></td>
+                <td><?= htmlspecialchars((string) $test['harapan']) ?></td>
+                <td class="<?= $berhasil ? 'pass' : 'fail' ?>">
+                    <?= $berhasil ? 'PASS' : 'FAIL' ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
 
-            <?php echo $item['nama']; ?> :
-
-            <?php if ($item['hasil']): ?>
-
-                <span class="pass">PASS</span>
-
-                <?php $jumlahPass++; ?>
-
-            <?php else: ?>
-
-                <span class="fail">FAIL</span>
-
-            <?php endif; ?>
-
-        </div>
-
-    <?php endforeach; ?>
-
-    <hr>
-
-    <h2>
-        Hasil:
-        <?php echo $jumlahPass; ?> / <?php echo count($tests); ?> TEST PASS
-    </h2>
-
-</div>
-
+    <h2>Hasil: <?= $lulus ?>/<?= $total ?> pengujian lulus</h2>
+</main>
 </body>
-
 </html>
