@@ -1,20 +1,98 @@
 
 <?php
 $nama = "Abdul Rasyid";
-$umur = 20;
-$nilai = 85.5;
-$aktif = true;
+$nim = 2524226;
+$hargaKursus = 150000.0;
+$kursusTersedia = true;
+$daftarKursus = ["PHP Dasar", "MySQL Dasar", "HTML & CSS"];
 
-echo "<h1>Latihan Tipe Data PHP</h1>";
-
-echo "<p>Nama: " . $nama . "</p>";
-echo "<p>Umur: " . $umur . "</p>";
-echo "<p>Nilai: " . $nilai . "</p>";
-echo "<p>Status aktif: " . ($aktif ? "Ya" : "Tidak") . "</p>";
-
-echo "<h2>Jenis Data</h2>";
-echo "<p>Nama: " . gettype($nama) . "</p>";
-echo "<p>Umur: " . gettype($umur) . "</p>";
-echo "<p>Nilai: " . gettype($nilai) . "</p>";
-echo "<p>Aktif: " . gettype($aktif) . "</p>";
+$data = [
+    'Nama' => $nama,
+    'NIM' => $nim,
+    'Harga Kursus' => $hargaKursus,
+    'Kursus Tersedia' => $kursusTersedia,
+    'Daftar Kursus' => $daftarKursus
+];
 ?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengujian Tipe Data PHP</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 30px 15px;
+        }
+
+        main {
+            max-width: 750px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <h1>Pengujian Tipe Data PHP</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Variabel</th>
+                <th>Nilai</th>
+                <th>Tipe Data</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <?php foreach ($data as $label => $nilai): ?>
+            <tr>
+                <td><?= htmlspecialchars($label) ?></td>
+
+                <td>
+                    <?php
+                    if (is_bool($nilai)) {
+                        echo $nilai ? 'true' : 'false';
+                    } elseif (is_array($nilai)) {
+                        echo htmlspecialchars(implode(', ', $nilai));
+                    } elseif (is_float($nilai)) {
+                        echo htmlspecialchars((string) $nilai);
+                    } else {
+                        echo htmlspecialchars((string) $nilai);
+                    }
+                    ?>
+                </td>
+
+                <td>
+                    <?= htmlspecialchars(gettype($nilai)) ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
