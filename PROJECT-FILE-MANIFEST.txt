@@ -1,51 +1,47 @@
 
-PROJECT FILE MANIFEST - KURSUSKU
-================================
-
-IDENTITAS
----------
-Nama       : Abdul Rasyid
-NIM        : 2524226
-Program    : PTIK
+PROJECT FILE MANIFEST
+Proyek: KursusKu - Katalog Kursus Online
+Nama: Abdul Rasyid
+NIM: 2524226
 Mata Kuliah: Bahasa Pemrograman III
 
 FILE UTAMA
-----------
-index.php
-server-time.php
-fee-calculator.php
-helpers.php
-test-functions.php
-README.md
+- index.php
+- hello.php
+- server-time.php
+- fee-calculator.php
+- helpers.php
+- README.md
 
-LATIHAN PHP
------------
-hello.php
-fee-tests.php
-type-data-test.php
-operator-test.php
-logic-test.php
-string-test.php
-date-test.php
-procedure-test.php
+FILE PENGUJIAN
+- test-functions.php
+- fee-tests.php
+- type-data-test.php
+- operator-test.php
+- logic-test.php
+- string-test.php
+- date-test.php
+- procedure-test.php
 
-DOKUMENTASI
------------
-PORTOFOLIO-CHECKLIST.md
-REFLEKSI-P5-P6.md
-PROJECT-FILE-MANIFEST.txt
+ASET MEDIA
+- assets/images/hero-kursus.jpg
+- assets/video/intro-kursus.mp4
 
-FOLDER ASET
------------
-assets/images/
-assets/video/
-evidence/
+DOKUMENTASI DAN BUKTI
+- PORTOFOLIO-CHECKLIST.md
+- REFLEKSI-P5-P6.md
+- PROJECT-FILE-MANIFEST.txt
+- VALIDATION-RESULTS.txt
+- evidence/README.md
+
+LINGKUNGAN PENGEMBANGAN
+- PHP
+- HTML
+- CSS
+- Laragon
+- Git dan GitHub
 
 CATATAN
--------
-Daftar ini merupakan daftar target struktur proyek.
-Periksa kembali repository untuk memastikan semua file
-dan folder benar-benar tersedia.
-
-Lakukan pengujian program melalui server PHP sebelum
-menyatakan seluruh program berhasil.
+Daftar ini merangkum berkas proyek yang telah disiapkan.
+Pengujian langsung tetap diperlukan untuk memastikan setiap
+halaman berjalan dengan benar.
