@@ -1,8 +1,6 @@
+# KursusKu - Proyek Praktikum PHP
 
-# KursusKu — Proyek Praktikum PHP
-
-Proyek ini merupakan latihan mata kuliah Bahasa Pemrograman III
-untuk mempelajari dasar pemrograman PHP dan pengembangan aplikasi web.
+Proyek praktikum mata kuliah Bahasa Pemrograman III untuk mempelajari dasar PHP dan pengembangan aplikasi web.
 
 ## Identitas Mahasiswa
 
@@ -13,133 +11,89 @@ untuk mempelajari dasar pemrograman PHP dan pengembangan aplikasi web.
 
 ## Deskripsi Proyek
 
-KursusKu adalah prototipe website kursus online yang menampilkan
-daftar kursus, harga, status ketersediaan, formulir pendaftaran,
-simulasi perhitungan biaya, dan materi latihan PHP.
+KursusKu merupakan prototipe website kursus yang digunakan untuk mempraktikkan pemrosesan data, formulir, validasi, perhitungan biaya, dan penyajian data menggunakan PHP.
 
-Sebagian fitur menggunakan data simulasi dan belum terhubung
-ke database.
+## Fitur dan Materi Praktikum
 
-## Teknologi
+- Menampilkan halaman utama dan informasi kursus.
+- Menggunakan variabel, tipe data, operator, percabangan, dan perulangan.
+- Mengolah data kursus melalui file PHP.
+- Memproses formulir menggunakan metode GET dan POST.
+- Memvalidasi data pendaftaran.
+- Menghitung subtotal, diskon, dan total biaya kursus.
+- Menampilkan contoh riwayat pendaftaran.
+- Menguji fungsi PHP menggunakan skrip pengujian.
 
-- PHP
-- HTML5
-- CSS
-- Laragon
-- Git dan GitHub
+## Materi Praktikum Week 5
 
-## Fitur Utama
+Bagian ini mendokumentasikan latihan formulir dan pemrosesan data menggunakan PHP.
 
-- Halaman utama dan katalog kursus
-- Tampilan tanggal dan waktu server
-- Kalkulator biaya dan diskon
-- Formulir pendaftaran menggunakan POST
-- Validasi input pendaftaran
-- Demonstrasi metode GET
-- Simulasi riwayat pendaftaran
-- Latihan tipe data dan operator PHP
-- Latihan percabangan dan perulangan
-- Latihan manipulasi string
-- Latihan tanggal dan waktu
-- Latihan fungsi dan prosedur
-- Latihan operator bitwise
-- Halaman pengujian fungsi
+File yang berkaitan:
+- `registration.php` - formulir pendaftaran kursus.
+- `process-registration.php` - validasi dan pemrosesan formulir.
+- `get-demo.php` - contoh pengiriman dan pembacaan data GET.
+- `register.php` - contoh formulir pilihan kursus.
+- `data.php` - data contoh kursus dan pilihan minat.
 
-## Daftar File Utama
+**Bukti praktik:** simpan screenshot halaman formulir dan hasil pemrosesan yang berhasil di folder `evidence/week-05/`.
 
-| File | Fungsi |
-|---|---|
-| `index.php` | Halaman utama dan katalog kursus |
-| `data.php` | Data contoh kursus dan pilihan |
-| `hello.php` | Perkenalan mahasiswa |
-| `server-time.php` | Menampilkan waktu server |
-| `helpers.php` | Fungsi bantuan |
-| `fee-calculator.php` | Kalkulator biaya kursus |
-| `test-functions.php` | Pengujian fungsi |
-| `fee-tests.php` | Pengujian biaya |
-| `registration.php` | Formulir pendaftaran |
-| `process-registration.php` | Validasi formulir |
-| `get-demo.php` | Demonstrasi GET |
-| `register.php` | Latihan formulir dan percabangan |
-| `process.php` | Perhitungan biaya dan diskon |
-| `history.php` | Contoh riwayat pendaftaran |
-| `loop-lab.php` | Latihan perulangan |
-| `bitwise-test.php` | Latihan operator bitwise |
-| `type-data-test.php` | Latihan tipe data |
-| `operator-test.php` | Latihan operator |
-| `logic-test.php` | Latihan logika |
-| `string-test.php` | Latihan string |
-| `date-test.php` | Latihan tanggal dan waktu |
-| `procedure-test.php` | Latihan fungsi dan prosedur |
+## Materi Praktikum Week 6
 
-## Struktur Folder
+Bagian ini mendokumentasikan latihan pengolahan data kursus, perhitungan biaya, dan penyajian riwayat.
 
-```text
-kursusku-prototype/
-├── index.php
-├── data.php
-├── hello.php
-├── server-time.php
-├── helpers.php
-├── fee-calculator.php
-├── test-functions.php
-├── fee-tests.php
-├── registration.php
-├── process-registration.php
-├── get-demo.php
-├── register.php
-├── process.php
-├── history.php
-├── loop-lab.php
-├── bitwise-test.php
-├── type-data-test.php
-├── operator-test.php
-├── logic-test.php
-├── string-test.php
-├── date-test.php
-├── procedure-test.php
-├── README.md
-├── assets/
-│   ├── images/
-│   │   └── hero-kursus.jpg
-│   └── video/
-│       └── intro-kursus.mp4
-└── evidence/
-```
+File yang berkaitan:
+- `process.php` - pengolahan pilihan kursus dan diskon.
+- `history.php` - tampilan contoh riwayat pendaftaran.
+- `loop-lab.php` - latihan perulangan.
+- `helpers.php` - fungsi pembantu untuk format rupiah dan perhitungan.
+- `fee-calculator.php` dan `fee-tests.php` - kalkulasi biaya dan pengujian.
 
-## Cara Menjalankan di Komputer
+**Bukti praktik:** simpan screenshot hasil perhitungan dan halaman riwayat di folder `evidence/week-06/`.
 
-1. Instal dan buka Laragon.
-2. Pastikan Apache berjalan.
-3. Letakkan folder proyek di `C:\laragon\www\kursusku-prototype`.
-4. Buka browser dan akses:
+Catatan: pengelompokan materi Week 5 dan Week 6 ini berdasarkan fitur yang tersedia pada proyek. Sesuaikan dengan instruksi resmi dosen jika terdapat ketentuan khusus.
 
-   `http://localhost/kursusku-prototype/`
+## Struktur Proyek
 
-5. Buka menu praktikum untuk mencoba halaman lainnya.
+- `index.php` - halaman utama.
+- `data.php` - data contoh kursus.
+- `helpers.php` - fungsi pembantu.
+- `registration.php` - formulir pendaftaran.
+- `process-registration.php` - pemrosesan pendaftaran.
+- `register.php` dan `process.php` - latihan formulir dan perhitungan.
+- `history.php` - contoh riwayat.
+- `assets/` - gambar dan video.
+- `evidence/` - dokumentasi screenshot praktik.
 
-## Cara Menguji
+## Cara Menjalankan
 
-- Uji kalkulator menggunakan harga Rp150.000, jumlah 2, dan diskon 10%.
-- Pastikan subtotal Rp300.000, potongan Rp30.000, dan total Rp270.000.
-- Uji formulir dengan input valid dan tidak valid.
-- Uji pencarian menggunakan metode GET.
-- Uji setiap halaman latihan melalui menu utama.
-- Catat hasil pengujian berdasarkan hasil yang benar-benar diperoleh.
+1. Jalankan Laragon atau gunakan PHP CLI.
+2. Buka terminal pada folder proyek.
+3. Jalankan server PHP:
 
-## Batasan Proyek
+   `php -S 127.0.0.1:8000`
 
-- Data kursus dan riwayat masih berupa data contoh.
-- Pendaftaran belum tersimpan permanen ke database.
-- Hasil pengujian harus dikonfirmasi melalui pelaksanaan program.
+4. Buka `http://127.0.0.1:8000/` di browser.
 
-## Dokumentasi dan Bukti Praktik
+Jika menggunakan PHP Laragon secara langsung, gunakan executable PHP yang terpasang di komputer.
 
-Folder `evidence/` disediakan untuk menyimpan screenshot hasil praktik,
-misalnya halaman utama, kalkulator, formulir, dan hasil pengujian.
+## Pengujian
 
-Screenshot harus berasal dari pelaksanaan program yang sebenarnya.
+Jalankan perintah berikut dari folder proyek:
+
+- `php -l index.php` untuk memeriksa sintaks file utama.
+- `php test-functions.php` untuk menguji fungsi pembantu.
+- `php fee-tests.php` untuk menguji perhitungan biaya.
+
+Pengujian sebelumnya menunjukkan 6/6 pengujian fungsi dan 9/9 pengujian biaya lulus.
+
+## Batasan
+
+Proyek ini masih berupa prototipe praktikum. Data kursus dan riwayat yang ditampilkan merupakan data contoh; pendaftaran belum disimpan ke database.
+
+## Dokumentasi
+
+Screenshot praktik disimpan dalam folder `evidence/` sesuai minggu praktikum. Pastikan screenshot berasal dari hasil praktik yang benar-benar dijalankan.
 
 ## Lisensi
 
-Proyek ini dibuat untuk keperluan pembelajaran dan praktikum.
+Proyek ini dibuat untuk keperluan pembelajaran.
