@@ -1,0 +1,49 @@
+
+VALIDATION RESULTS - KURSUSKU
+=============================
+
+Nama        : Abdul Rasyid
+NIM         : 2524226
+Mata Kuliah : Bahasa Pemrograman III
+
+TUJUAN
+------
+Dokumen ini digunakan untuk mencatat pemeriksaan file,
+fitur, dan pengujian proyek KursusKu.
+
+PEMERIKSAAN FILE
+----------------
+[ ] index.php
+[ ] server-time.php
+[ ] fee-calculator.php
+[ ] helpers.php
+[ ] test-functions.php
+[ ] fee-tests.php
+[ ] hello.php
+[ ] type-data-test.php
+[ ] operator-test.php
+[ ] logic-test.php
+[ ] string-test.php
+[ ] date-test.php
+[ ] procedure-test.php
+
+PEMERIKSAAN FITUR
+-----------------
+[ ] Halaman utama dapat dibuka.
+[ ] Waktu server ditampilkan.
+[ ] Kalkulator biaya dapat digunakan.
+[ ] Fungsi bantuan berjalan sesuai harapan.
+[ ] Pengujian fungsi selesai.
+[ ] Pengujian kalkulator selesai.
+
+HASIL PENGUJIAN
+---------------
+Status: Belum diverifikasi melalui server PHP.
+
+Catatan:
+Isi checklist setelah setiap file diperiksa dan fitur
+benar-benar diuji. Jangan menandai pengujian berhasil
+sebelum melihat hasilnya.
+
+Tanggal pemeriksaan:
+Isi setelah pemeriksaan dilakukan.
