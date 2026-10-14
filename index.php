@@ -1,268 +1,266 @@
 
 <?php
 require_once 'helpers.php';
+require_once 'data.php';
 
-$daftarKursus = [
-    [
-        'nama' => 'PHP Dasar',
-        'deskripsi' => 'Belajar dasar-dasar pemrograman PHP untuk membuat website dinamis.',
-        'tersedia' => true
-    ],
-    [
-        'nama' => 'MySQL Dasar',
-        'deskripsi' => 'Pelajari database MySQL dan cara mengelola data menggunakan SQL.',
-        'tersedia' => true
-    ],
-    [
-        'nama' => 'HTML & CSS',
-        'deskripsi' => 'Pelajari cara membuat tampilan website menggunakan HTML dan CSS.',
-        'tersedia' => false
-    ],
-    [
-        'nama' => 'JavaScript',
-        'deskripsi' => 'Belajar membuat website interaktif menggunakan JavaScript.',
-        'tersedia' => true
-    ],
-    [
-        'nama' => 'Laravel',
-        'deskripsi' => 'Pelajari framework Laravel untuk pengembangan aplikasi web modern.',
-        'tersedia' => false
-    ],
-    [
-        'nama' => 'Git & GitHub',
-        'deskripsi' => 'Belajar menggunakan Git dan GitHub untuk mengelola proyek pemrograman.',
-        'tersedia' => true
-    ]
+$menuLatihan = [
+    ['judul' => 'Perkenalan PHP', 'file' => 'hello.php'],
+    ['judul' => 'Waktu Server', 'file' => 'server-time.php'],
+    ['judul' => 'Kalkulator Biaya', 'file' => 'fee-calculator.php'],
+    ['judul' => 'Pengujian Fungsi', 'file' => 'test-functions.php'],
+    ['judul' => 'Demo GET', 'file' => 'get-demo.php'],
+    ['judul' => 'Form Pendaftaran', 'file' => 'registration.php'],
+    ['judul' => 'Proses Pendaftaran', 'file' => 'process-registration.php'],
+    ['judul' => 'Latihan Register', 'file' => 'register.php'],
+    ['judul' => 'Proses Biaya Kursus', 'file' => 'process.php'],
+    ['judul' => 'Riwayat Pendaftaran', 'file' => 'history.php'],
+    ['judul' => 'Laboratorium Looping', 'file' => 'loop-lab.php'],
+    ['judul' => 'Operator Bitwise', 'file' => 'bitwise-test.php'],
+    ['judul' => 'Tipe Data', 'file' => 'type-data-test.php'],
+    ['judul' => 'Operator PHP', 'file' => 'operator-test.php'],
+    ['judul' => 'Logika dan Percabangan', 'file' => 'logic-test.php'],
+    ['judul' => 'Manipulasi String', 'file' => 'string-test.php'],
+    ['judul' => 'Tanggal dan Waktu', 'file' => 'date-test.php'],
+    ['judul' => 'Fungsi dan Prosedur', 'file' => 'procedure-test.php'],
+    ['judul' => 'Pengujian Biaya', 'file' => 'fee-tests.php']
 ];
+
+function eHome($nilai) {
+    return htmlspecialchars((string) $nilai, ENT_QUOTES, 'UTF-8');
+}
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KursusKu - Katalog Kursus</title>
-
+    <title>KursusKu - Platform Belajar Online</title>
     <style>
         * {
             box-sizing: border-box;
         }
-
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            background: #f4f6f9;
+            color: #243044;
             line-height: 1.6;
         }
-
         header {
-            background: #222;
+            background: #173f70;
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 18px 6%;
         }
-
-        header h1,
-        header p {
-            margin: 0;
-        }
-
-        .hero {
-            max-width: 1200px;
-            margin: 30px auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-        }
-
-        .hero img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .hero-text {
-            position: absolute;
-            left: 40px;
-            bottom: 40px;
-            max-width: 550px;
-            color: white;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .hero-text h2 {
-            margin: 0 0 10px;
-        }
-
-        .hero-text p {
-            margin: 0;
-        }
-
-        .video-section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .video-section video {
-            width: 100%;
-            border-radius: 10px;
-            background: #000;
-        }
-
-        .catalog {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .catalog > h2 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .courses {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .course {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .course h3 {
-            margin-top: 0;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
+        .brand {
+            font-size: 25px;
             font-weight: bold;
         }
-
-        .tersedia {
-            background: #d4edda;
-            color: #155724;
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
         }
-
-        .penuh {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            background: #222;
+        nav a {
             color: white;
+            text-decoration: none;
+        }
+        .hero {
+            padding: 45px 6%;
+            background: white;
+        }
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+        }
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            line-height: 1.2;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 390px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px 20px;
+        }
+        .course-grid, .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #173f70;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: #e5f7eb;
+            color: #176534;
+            font-size: 13px;
+        }
+        .full {
+            background: #ffe8e8;
+            color: #a22222;
+        }
+        .menu-grid a {
+            color: #174f8c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .menu-grid a:hover {
+            text-decoration: underline;
+        }
+        .video-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        video {
+            width: 100%;
+            max-height: 420px;
+            border-radius: 8px;
+        }
+        footer {
             text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            .courses {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .hero {
-                margin: 20px;
-            }
-
-            .hero img {
-                height: 300px;
-            }
-
-            .hero-text {
-                left: 15px;
-                right: 15px;
-                bottom: 15px;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .courses {
-                grid-template-columns: 1fr;
-            }
+            padding: 25px;
+            background: #173f70;
+            color: white;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <h1>KursusKu</h1>
-        <p>Platform Belajar Online</p>
-    </header>
+<header>
+    <div class="brand">KursusKu</div>
+    <nav>
+        <a href="#beranda">Beranda</a>
+        <a href="#kursus">Daftar Kursus</a>
+        <a href="#praktikum">Materi Praktikum</a>
+        <a href="registration.php">Pendaftaran</a>
+        <a href="history.php">Riwayat</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero">
-            <img
-                src="assets/images/hero-kursus.jpg"
-                alt="Gambar utama KursusKu"
-            >
+<section class="hero" id="beranda">
+    <div class="hero-content">
+        <h1>Belajar Keterampilan Digital Bersama KursusKu</h1>
+        <p>
+            Platform simulasi kursus untuk mempelajari pemrograman,
+            basis data, dan keterampilan digital.
+        </p>
 
-            <div class="hero-text">
-                <h2>Belajar Skill Digital</h2>
-                <p>
-                    Tingkatkan kemampuan programming
-                    dan teknologi bersama KursusKu.
-                </p>
-            </div>
-        </section>
+        <p>
+            <a href="registration.php">Mulai Pendaftaran</a>
+            |
+            <a href="#kursus">Lihat Daftar Kursus</a>
+        </p>
 
-        <section class="video-section">
-            <h2>Video Pengenalan KursusKu</h2>
+        <img
+            src="assets/images/hero-kursus.jpg"
+            alt="Ilustrasi pembelajaran KursusKu"
+            loading="lazy"
+        >
+    </div>
+</section>
 
+<main class="container">
+    <section id="kursus">
+        <h2>Daftar Kursus</h2>
+        <p>Pilih kursus yang sesuai dengan kebutuhan belajarmu.</p>
+
+        <div class="course-grid">
+            <?php foreach ($daftarKursus as $kursus): ?>
+                <article class="card">
+                    <h3><?= eHome($kursus['nama']) ?></h3>
+                    <p>Kode: <?= eHome($kursus['kode']) ?></p>
+                    <p class="price">
+                        <?= formatRupiah($kursus['harga']) ?>
+                    </p>
+                    <p>
+                        Kuota:
+                        <?= (int) $kursus['terdaftar'] ?>
+                        /
+                        <?= (int) $kursus['kuota'] ?>
+                    </p>
+                    <?php if ($kursus['tersedia']): ?>
+                        <span class="status">Tersedia</span>
+                    <?php else: ?>
+                        <span class="status full">Penuh</span>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <section style="margin-top: 40px;">
+        <h2>Video Perkenalan</h2>
+        <div class="video-box">
             <video controls preload="metadata">
-                <source
-                    src="assets/video/intro-kursus.mp4"
-                    type="video/mp4"
-                >
-                Browser kamu tidak mendukung pemutaran video.
+                <source src="assets/video/intro-kursus.mp4" type="video/mp4">
+                Browser kamu tidak mendukung pemutar video.
             </video>
-        </section>
+        </div>
+    </section>
 
-        <section class="catalog">
-            <h2>Daftar Kursus</h2>
+    <section id="praktikum" style="margin-top: 40px;">
+        <h2>Materi dan Fitur Praktikum PHP</h2>
+        <p>
+            Buka tautan di bawah untuk melihat latihan yang telah dibuat.
+        </p>
 
-            <div class="courses">
-                <?php foreach ($daftarKursus as $kursus): ?>
-                    <?php
-                    $status = statusKursus($kursus['tersedia']);
-                    $kelasStatus = $kursus['tersedia']
-                        ? 'tersedia'
-                        : 'penuh';
-                    ?>
+        <div class="menu-grid">
+            <?php foreach ($menuLatihan as $menu): ?>
+                <article class="card">
+                    <a href="<?= eHome($menu['file']) ?>">
+                        <?= eHome($menu['judul']) ?>
+                    </a>
+                    <p>
+                        File:
+                        <code><?= eHome($menu['file']) ?></code>
+                    </p>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    </section>
 
-                    <article class="course">
-                        <h3>
-                            <?= htmlspecialchars($kursus['nama']) ?>
-                        </h3>
+    <section style="margin-top: 40px;">
+        <h2>Dokumentasi Proyek</h2>
+        <ul>
+            <li>
+                <a href="README.md">Dokumentasi README</a>
+            </li>
+            <li>
+                <a href="PORTOFOLIO-CHECKLIST.md">Checklist Portofolio</a>
+            </li>
+            <li>
+                <a href="REFLEKSI-P5-P6.md">Refleksi Praktikum</a>
+            </li>
+            <li>
+                <a href="PROJECT-FILE-MANIFEST.txt">Daftar File Proyek</a>
+            </li>
+            <li>
+                <a href="VALIDATION-RESULTS.txt">Catatan Validasi</a>
+            </li>
+        </ul>
+    </section>
+</main>
 
-                        <p>
-                            <?= htmlspecialchars($kursus['deskripsi']) ?>
-                        </p>
-
-                        <span class="status <?= $kelasStatus ?>">
-                            <?= htmlspecialchars($status) ?>
-                        </span>
-                    </article>
-                <?php endforeach; ?>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 KursusKu</p>
-    </footer>
+<footer>
+    <p>KursusKu — Proyek Praktikum Bahasa Pemrograman III</p>
+    <p>Disusun oleh Abdul Rasyid | PTIK</p>
+</footer>
 </body>
 </html>
