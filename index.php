@@ -1,11 +1,46 @@
+
+<?php
+require_once 'helpers.php';
+
+$daftarKursus = [
+    [
+        'nama' => 'PHP Dasar',
+        'deskripsi' => 'Belajar dasar-dasar pemrograman PHP untuk membuat website dinamis.',
+        'tersedia' => true
+    ],
+    [
+        'nama' => 'MySQL Dasar',
+        'deskripsi' => 'Pelajari database MySQL dan cara mengelola data menggunakan SQL.',
+        'tersedia' => true
+    ],
+    [
+        'nama' => 'HTML & CSS',
+        'deskripsi' => 'Pelajari cara membuat tampilan website menggunakan HTML dan CSS.',
+        'tersedia' => false
+    ],
+    [
+        'nama' => 'JavaScript',
+        'deskripsi' => 'Belajar membuat website interaktif menggunakan JavaScript.',
+        'tersedia' => true
+    ],
+    [
+        'nama' => 'Laravel',
+        'deskripsi' => 'Pelajari framework Laravel untuk pengembangan aplikasi web modern.',
+        'tersedia' => false
+    ],
+    [
+        'nama' => 'Git & GitHub',
+        'deskripsi' => 'Belajar menggunakan Git dan GitHub untuk mengelola proyek pemrograman.',
+        'tersedia' => true
+    ]
+];
+?>
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kursusku - Katalog Kursus</title>
+    <title>KursusKu - Katalog Kursus</title>
 
     <style>
         * {
@@ -17,6 +52,7 @@
             font-family: Arial, sans-serif;
             background: #f5f5f5;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
@@ -26,12 +62,9 @@
             text-align: center;
         }
 
-        header h1 {
-            margin: 0;
-        }
-
+        header h1,
         header p {
-            margin: 8px 0 0;
+            margin: 0;
         }
 
         .hero {
@@ -53,8 +86,9 @@
             position: absolute;
             left: 40px;
             bottom: 40px;
+            max-width: 550px;
             color: white;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
         }
@@ -86,14 +120,14 @@
             padding: 0 20px;
         }
 
-        .catalog h2 {
+        .catalog > h2 {
             text-align: center;
             margin-bottom: 30px;
         }
 
         .courses {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
 
@@ -136,7 +170,7 @@
 
         @media (max-width: 768px) {
             .courses {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .hero {
@@ -148,173 +182,87 @@
             }
 
             .hero-text {
-                left: 20px;
-                right: 20px;
-                bottom: 20px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .courses {
+                grid-template-columns: 1fr;
             }
         }
     </style>
-
 </head>
 
 <body>
-
     <header>
-        <h1>Kursusku</h1>
+        <h1>KursusKu</h1>
         <p>Platform Belajar Online</p>
     </header>
 
-
-    <div class="hero">
-
-        <img src="assets/images/hero-kursus.jpg" alt="Gambar Kursusku">
-
-        <div class="hero-text">
-            <h2>Belajar Skill Digital</h2>
-
-            <p>
-                Tingkatkan kemampuan programming
-                dan teknologi bersama Kursusku.
-            </p>
-        </div>
-
-    </div>
-
-
-    <section class="video-section">
-
-        <h2>Video Pengenalan Kursusku</h2>
-
-        <video controls>
-
-            <source
-                src="assets/video/intro-kursus.mp4"
-                type="video/mp4"
+    <main>
+        <section class="hero">
+            <img
+                src="assets/images/hero-kursus.jpg"
+                alt="Gambar utama KursusKu"
             >
 
-            Browser kamu tidak mendukung video.
-
-        </video>
-
-    </section>
-
-
-    <section class="catalog">
-
-        <h2>Daftar Kursus</h2>
-
-        <div class="courses">
-
-
-            <div class="course">
-
-                <h3>PHP Dasar</h3>
-
+            <div class="hero-text">
+                <h2>Belajar Skill Digital</h2>
                 <p>
-                    Belajar dasar-dasar pemrograman PHP
-                    untuk membuat website dinamis.
+                    Tingkatkan kemampuan programming
+                    dan teknologi bersama KursusKu.
                 </p>
-
-                <span class="status tersedia">
-                    Tersedia
-                </span>
-
             </div>
+        </section>
 
+        <section class="video-section">
+            <h2>Video Pengenalan KursusKu</h2>
 
-            <div class="course">
+            <video controls preload="metadata">
+                <source
+                    src="assets/video/intro-kursus.mp4"
+                    type="video/mp4"
+                >
+                Browser kamu tidak mendukung pemutaran video.
+            </video>
+        </section>
 
-                <h3>MySQL Dasar</h3>
+        <section class="catalog">
+            <h2>Daftar Kursus</h2>
 
-                <p>
-                    Pelajari database MySQL dan cara
-                    mengelola data menggunakan SQL.
-                </p>
+            <div class="courses">
+                <?php foreach ($daftarKursus as $kursus): ?>
+                    <?php
+                    $status = statusKursus($kursus['tersedia']);
+                    $kelasStatus = $kursus['tersedia']
+                        ? 'tersedia'
+                        : 'penuh';
+                    ?>
 
-                <span class="status tersedia">
-                    Tersedia
-                </span>
+                    <article class="course">
+                        <h3>
+                            <?= htmlspecialchars($kursus['nama']) ?>
+                        </h3>
 
+                        <p>
+                            <?= htmlspecialchars($kursus['deskripsi']) ?>
+                        </p>
+
+                        <span class="status <?= $kelasStatus ?>">
+                            <?= htmlspecialchars($status) ?>
+                        </span>
+                    </article>
+                <?php endforeach; ?>
             </div>
-
-
-            <div class="course">
-
-                <h3>HTML & CSS</h3>
-
-                <p>
-                    Pelajari cara membuat tampilan
-                    website menggunakan HTML dan CSS.
-                </p>
-
-                <span class="status penuh">
-                    Penuh
-                </span>
-
-            </div>
-
-
-            <div class="course">
-
-                <h3>JavaScript</h3>
-
-                <p>
-                    Belajar membuat website interaktif
-                    menggunakan JavaScript.
-                </p>
-
-                <span class="status tersedia">
-                    Tersedia
-                </span>
-
-            </div>
-
-
-            <div class="course">
-
-                <h3>Laravel</h3>
-
-                <p>
-                    Pelajari framework Laravel untuk
-                    pengembangan aplikasi web modern.
-                </p>
-
-                <span class="status penuh">
-                    Penuh
-                </span>
-
-            </div>
-
-
-            <div class="course">
-
-                <h3>Git & GitHub</h3>
-
-                <p>
-                    Belajar menggunakan Git dan GitHub
-                    untuk mengelola proyek pemrograman.
-                </p>
-
-                <span class="status tersedia">
-                    Tersedia
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
+        </section>
+    </main>
 
     <footer>
-
-        <p>
-            &copy; 2026 Kursusku
-        </p>
-
+        <p>&copy; 2026 KursusKu</p>
     </footer>
-
 </body>
-
 </html>
